@@ -2,6 +2,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pageObject.component.Hobbies;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -10,21 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTests {
 
-    public enum Hobbies {
-        Sports(1),
-        Reading(2),
-        Music(3);
 
-        int hobbies;
-
-        Hobbies(int i) {
-            this.hobbies = i;
-        }
-
-        public int getHobbies() {
-            return hobbies;
-        }
-    }
 
     @BeforeAll
     public static void setUp() {
