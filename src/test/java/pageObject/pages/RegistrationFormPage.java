@@ -3,6 +3,8 @@ package pageObject.pages;
 import com.codeborne.selenide.SelenideElement;
 import pageObject.component.CalendarComponent;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -105,6 +107,12 @@ public class RegistrationFormPage {
         return this;
     }
 
+    public RegistrationFormPage setSubject(List<String> value) {
+        for (String s: value) {
+            subjectsInput.setValue(s).pressEnter();
+        }
+        return this;
+    }
 
     public RegistrationFormPage checkResult(String key, String value) {
         tableResponse.$(byText(key))
